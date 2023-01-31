@@ -85,7 +85,8 @@ jobs:
 
       - name: Build debug
         run: |
-          python build.py -v binary magiskinit magisk
+          python build.py -v all
+      # binary magiskinit magisk
 
       # Only upload artifacts built on Linux
       - name: Upload build artifact
@@ -93,4 +94,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ github.sha }}
-          path: native/out
+          path: out
